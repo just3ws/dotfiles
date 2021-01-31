@@ -76,8 +76,7 @@ set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitigno
 set autowrite     " Automatically :write before running commands
 set modelines=0   " Disable modelines as a security precaution
 set nomodeline
- 
-
+set nowrap
 
 " augroup vimrcEx
 "   autocmd!
@@ -103,17 +102,13 @@ set nomodeline
  augroup ale
    autocmd!
  
-   if g:has_async
-     autocmd VimEnter *
-       \ set updatetime=1000 |
-       \ let g:ale_lint_on_text_changed = 0
-     autocmd CursorHold * call ale#Queue(0)
-     autocmd CursorHoldI * call ale#Queue(0)
-     autocmd InsertEnter * call ale#Queue(0)
-     autocmd InsertLeave * call ale#Queue(0)
-   else
-     echoerr "The thoughtbot dotfiles require NeoVim or Vim 8"
-   endif
+   autocmd VimEnter *
+         \ set updatetime=1000 |
+         \ let g:ale_lint_on_text_changed = 0
+   autocmd CursorHold * call ale#Queue(0)
+   autocmd CursorHoldI * call ale#Queue(0)
+   autocmd InsertEnter * call ale#Queue(0)
+   autocmd InsertLeave * call ale#Queue(0)
  augroup END
  
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
