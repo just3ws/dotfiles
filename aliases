@@ -1,3 +1,6 @@
+alias vim='/usr/local/bin/nvim'
+alias vi='/usr/local/bin/nvim'
+
 # Unix
 alias ll="ls -al"
 alias ln="ln -v"
@@ -7,6 +10,7 @@ alias v="$VISUAL"
 
 # Bundler
 alias b="bundle"
+alias be="bundle exec"
 
 # Rails
 alias migrate="rake db:migrate db:rollback && rake db:migrate db:test:prepare"

@@ -45,6 +45,10 @@ Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/tComment'
 
+Plug 'sjl/vitality.vim'
+Plug 'preservim/nerdtree'
+Plug 'arcticicestudio/nord'
+
 if g:has_async
   Plug 'dense-analysis/ale'
 endif
