@@ -1,3 +1,5 @@
+# vim: set ft=zsh: set syntax=zsh:
+
 local _old_path="$PATH"
 
 # Local config

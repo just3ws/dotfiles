@@ -1,16 +1,22 @@
 # ensure dotfiles bin directory is loaded first
-PATH="$HOME/.bin:/usr/local/sbin:$PATH"
 
-# Try loading ASDF from the regular home dir location
-if [ -f "$HOME/.asdf/asdf.sh" ]; then
-  . "$HOME/.asdf/asdf.sh"
-elif which brew >/dev/null &&
-  BREW_DIR="$(dirname `which brew`)/.." &&
-  [ -f "$BREW_DIR/opt/asdf/asdf.sh" ]; then
-  . "$BREW_DIR/opt/asdf/asdf.sh"
-fi
+path=(
+  $HOME/.bin
+  $HOME/.asdf/bin
+  /usr/local/opt/postgresql@10/bin
+  /usr/local/bin
+  /usr/bin
+  /bin
+  /usr/local/sbin
+  /usr/sbin
+  /sbin
+  $path
+)
 
-# mkdir .git/safe in the root of repositories you trust
-PATH=".git/safe/../../bin:$PATH"
+source '/usr/local/opt/asdf/asdf.sh'
 
-export -U PATH
+# https://thoughtbot.com/blog/git-safe
+# # mkdir .git/safe in the root of repositories you trust
+# PATH=".git/safe/../../bin:$PATH"
+
+export -U path 

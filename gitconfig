@@ -1,10 +1,17 @@
 [init]
   defaultBranch = main
   templatedir = ~/.git_template
+
+[user]
+	email = mike@just3ws.com
+	name = Mike Hall
+
 [push]
   default = current
+
 [color]
   ui = auto
+
 [alias]
   aa = add --all
   ap = add --patch
@@ -13,21 +20,31 @@
   co = checkout
   pf = push --force-with-lease
   st = status
+
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
+
 [merge]
   ff = only
+
 [commit]
   template = ~/.gitmessage
+
 [fetch]
   prune = true
+
 [rebase]
   autosquash = true
+
 [include]
   path = ~/.gitconfig.local
+
 [diff]
   colorMoved = zebra
-[user]
-	email = mike@just3ws.com
-	name = Mike Hall
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

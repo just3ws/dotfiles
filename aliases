@@ -1,3 +1,5 @@
+# vim: set filetype=zsh:set syntax=zsh:
+
 alias vim='/usr/local/bin/nvim'
 alias vi='/usr/local/bin/nvim'
 
